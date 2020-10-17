@@ -3,7 +3,6 @@ const path = require("path");
 // import middleware that check to see if user is logged in before allowing them access
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
-
 module.exports = function (app) {
 
     //if user is logged in send them to their personal page, otherwise send them to register page
@@ -26,10 +25,11 @@ module.exports = function (app) {
 
     //send register page
     app.get("/register", (req, res) => {
+        console.log("Register Route hit");
         if(req.user) {
             res.redirect("/userPage");
         }
-        res.sendFile(path.join(__dirname, "../public/register.html"));
+        res.sendFile(path.join(__dirname, "../client/src/components/pages/Register/Register"));
     });
 
     // Here we've add our isAuthenticated middleware to our routes.

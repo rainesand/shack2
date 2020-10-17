@@ -1,46 +1,54 @@
-import React from "react";
-import { Input } from 'react-rainbow-components';
-import { Button } from 'react-rainbow-components';
+import React, {useEffect, useState} from "react";
+
+import { Container, Form, Row, Col, Button } from 'react-bootstrap';
 import { Link, useLocation } from "react-router-dom";
-import "./style.css";
-
-const inputStyles = {
-  width: 300,
-};
-
+import API from "../../../utils/API";
 const Register = () => {
+
+    useEffect(() => {
+      getUsers()
+    }, [])
+
+
+    function getUsers(){
+      API.getUsers()
+      .then((res) => {
+        console.log(res) 
+      })
+      .catch((err) => {
+        console.log(err) 
+      })
+
+    }
+
   return (
-    <div className="container">
-    <div className="rainbow-m-vertical_x-large rainbow-m_auto">
-      <div className="rainbow-align-content_center rainbow-flex_wrap">
-      <Input
-          label="Email"
-          placeholder="Enter Email"
-          type="text"
-          className="rainbow-p-around_medium"
-          style={inputStyles}
-        />
+    <Container >
+      <Row className="justify-content-md-center">
+        <Col md={6}>
+          <Form>
+            <Form.Group controlId="formBasicEmail">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control type="email" placeholder="Enter Email" />
+            </Form.Group>
 
-        <Input
-          label="Username"
-          placeholder="Enter Username"
-          type="text"
-          className="rainbow-p-around_medium"
-          style={inputStyles}
-        />
+            <Form.Group controlId="formUsername">
+              <Form.Label>Username</Form.Label>
+              <Form.Control type="username" placeholder="Enter Username" />
+            </Form.Group>
 
-        <Input
-          label="Password"
-          placeholder="**********"
-          type="password"
-          className="rainbow-p-around_medium"
-          style={inputStyles}
-        />
+            <Form.Group controlId="formBasicPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control type="password" placeholder="Enter Password" />
+            </Form.Group>
 
+            <Button variant="primary" type="submit">
+              Submit
+            </Button>
 
-      </div>
-    </div>
-    </div>
+          </Form>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

@@ -1,9 +1,9 @@
 import axios from "axios";
 
 export default {
-  // Gets all posts
-  getPosts: function() {
-    return axios.get("/api/posts");
+  // Gets all users
+  getUsers: function() {
+    return axios.get("/api/users");
   },
   // Gets the post with the given id
   getPost: function(id) {
