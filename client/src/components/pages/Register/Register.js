@@ -37,15 +37,6 @@ const Register = () => {
           style={inputStyles}
         />
 
-        <Button variant="brand" className="rainbow-m-around_medium">
-          Register
-        </Button>
-        
-        <Link to="/home" className="here">
-        <Button variant="brand" className="rainbow-m-around_medium">
-          Login
-        </Button>
-        </Link>
 
       </div>
     </div>

@@ -4,6 +4,7 @@ import logo from './logo.svg';
 import './App.css';
 import Home from "./components/pages/Home/Home";
 import Register from "./components/pages/Register/Register"
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
