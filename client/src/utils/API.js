@@ -13,8 +13,8 @@ export default {
   deletePost: function(id) {
     return axios.delete("/api/posts/" + id);
   },
-  // Saves a post to the database
-  savePost: function(postData) {
-    return axios.post("/api/posts", postData);
+  // Saves a user to the database
+  saveUser: function(userData) {
+    return axios.post("/api/users", userData);
   }
 };
