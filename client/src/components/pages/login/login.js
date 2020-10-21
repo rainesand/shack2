@@ -1,8 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Form, Container, Row, Col, Button } from 'react-bootstrap';
 import { Link, useLocation } from "react-router-dom";
 
 const Login = () => {
+
+    const [formObject, setFormObject] = useState({
+        email: "",
+        password: ""
+    })
+
+    useEffect(() => {
+        // getUsers()
+      }, [])
+    
+      // Handles updating component state when the user types into the input field
+      function handleInputChange(event) {
+        const { name, value } = event.target;
+        setFormObject({ ...formObject, [name]: value })
+      };
+
     return (
         <Container >
             <Row className="justify-content-md-center">
@@ -10,13 +26,20 @@ const Login = () => {
                     <Form>
                         <Form.Group controlId="formBasicEmail">
                             <Form.Label>Email address</Form.Label>
-                            <Form.Control type="email" placeholder="Enter email" />
+                            <Form.Control
+                                onChange={handleInputChange}
+                                name="email"
+                                placeholder="Enter Email (required)"
+                                value={formObject.email} />
                         </Form.Group>
 
                         <Form.Group controlId="formBasicPassword">
                             <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" placeholder="Password" />
-                        </Form.Group>
+                            <Form.Control
+                                onChange={handleInputChange}
+                                name="password"
+                                placeholder="Enter Password (required)"
+                                value={formObject.password} />                        </Form.Group>
 
                         <Button variant="primary" type="submit">
                             Go
