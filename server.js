@@ -2,26 +2,14 @@ const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const PORT = process.env.PORT || 3001;
-const session = require('express-session')
-const passport = require('./passport');
+const morgan = require('morgan');
 
 
 
 const app = express();
 
 
-//sessions
-app.use(
-  session({
-    secret: 'fraggle-rock', //pick a random string to make the hash that is generated secure
-    resave: false, //required
-    saveUninitialized: false //required
-
-  })
-)
-
-app.use(passport.initialize())
-app.use(passport.session()) // calls serializeUser and deserializeUser
+app.use(morgan(':method :url :status :res[content-length] - :response-time ms'));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

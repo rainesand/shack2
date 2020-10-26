@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
-
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import Add from "../Add/Add"
 import { Container, Form, Row, Col, Button } from 'react-bootstrap';
 import API from "../../../utils/API";
 const Register = () => {
@@ -54,6 +56,11 @@ const Register = () => {
 
   return (
     <Container >
+      <Router>
+        <Switch>
+          <Route exact path="/add" component={Add} />
+        </Switch>
+      </Router>
       <Row className="justify-content-md-center">
         <Col md={6}>
           <Form>
@@ -84,10 +91,12 @@ const Register = () => {
                 value={formObject.password} />
             </Form.Group>
 
-            <Button variant="primary" type="submit"
-              onClick={handleFormSubmit} >
-              Submit
+            <Link to="/add" >
+              <Button href="/add" variant="primary" type="submit"
+                onClick={handleFormSubmit} >
+                Submit
             </Button>
+            </Link>
 
           </Form>
         </Col>

@@ -16,7 +16,7 @@ const Login = () => {
       // Handles updating component state when the user types into the input field
       function handleInputChange(event) {
         const { name, value } = event.target;
-        setFormObject({ ...formObject, [name]: value })
+          setFormObject({ ...formObject, [name]: value })
       };
 
     return (
