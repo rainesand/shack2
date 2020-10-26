@@ -2,13 +2,14 @@ const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const PORT = process.env.PORT || 3001;
-
+const morgan = require("morgan");
 
 const app = express();
 
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(morgan("app.use(morgan(':method :url :status :res[content-length] - :response-time ms'));"));
 
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));

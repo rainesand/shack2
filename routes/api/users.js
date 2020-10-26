@@ -7,7 +7,9 @@ router
   .get(usersController.findAll)
   .post(usersController.create)
 
-
+router
+.route("/login")
+.get(usersController.findOne)
 // POST user with "/api/users"
 // Matches with "/api/users/:id"
 // router
