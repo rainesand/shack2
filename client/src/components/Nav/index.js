@@ -19,7 +19,7 @@ function Navbar() {
             <Nav.Link href="/add">Add Shows</Nav.Link>
         </Nav.Item>
         <Nav.Item as="li">
-            <Nav.Link href="/add">Add Shows</Nav.Link>
+            <Nav.Link href="/library">Library</Nav.Link>
         </Nav.Item>
     </Nav>
     );
