@@ -8,7 +8,10 @@ function NewShows() {
 
 
     return (
-        <Container>
+        <Container id="newDisplay">
+            <Row className="justify-content-md-center">
+                <h1 id="displayTitle">Newest Additions In US</h1>
+            </Row>
             <Row className="justify-content-md-center">
                 <Col md={10}>
                     <CardDeck>
