@@ -14,9 +14,9 @@ router
 // POST user with "/api/users"
 // Matches with "/api/users/:id"
 // router
-//   .route("/:id")
-//   .get(usersController.findById)
-//   .put(usersController.update)
-//   .delete(usersController.remove);
+  .route("/:id")
+  .get(usersController.findById)
+  .put(usersController.update)
+  .delete(usersController.remove);
 
 module.exports = router;

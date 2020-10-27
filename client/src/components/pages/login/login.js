@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Form, Container, Row, Col, Button } from 'react-bootstrap';
-import { Link, useLocation } from "react-router-dom";
+// import { Link, useLocation } from "react-router-dom";
 import API from "../../../utils/API";
 const Login = () => {
     const [formObject, setFormObject] = useState({
