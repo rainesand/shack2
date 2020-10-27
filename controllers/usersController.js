@@ -23,5 +23,13 @@ module.exports = {
       .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
+  },
+  findOne: function(req, res) {
+    db.User.findOne({ email: req.query.email})
+      .then(dbModel => {
+        console.log(res.body);
+        res.json(dbModel)
+      })
+      .catch(err => res.status(422).json(err));
   }
 };

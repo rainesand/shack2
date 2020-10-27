@@ -34,7 +34,7 @@ export default {
   saveUser: function (userData) {
     return axios.post("/api/users", userData);
   },
-  postLogin: function (userData) {
-    return axios.post("/login", userData);
+  checkUser: function(userData) {
+    return axios.get("/api/login", userData);
   }
 };

@@ -8,15 +8,9 @@ router
   .get(usersController.findAll)
   .post(usersController.create)
 
-
-// // Login route
-
-// router
-//   .route("/login")
-//   .then((res,req) => {
-//     res.json(req.body);
-//   })
-
+router
+.route("/login")
+.get(usersController.findOne)
 // POST user with "/api/users"
 // Matches with "/api/users/:id"
 // router
