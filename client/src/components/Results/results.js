@@ -5,12 +5,12 @@ import './styles.css';
 import { Container, Row, Col, CardDeck } from 'react-bootstrap';
 
 function Results(props) {
-
+    var shows = props.shows;
 
     return (
         <Container>
-            <div>
-                {samples.map(show => {
+            <div id="results">
+                {shows.map(show => {
                     return <ShowCard sample={show} key={show.netflixid} />;
                 })}
             </div>
