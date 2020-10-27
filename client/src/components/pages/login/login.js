@@ -33,7 +33,7 @@ const Login = () => {
                     if (user.email === formObject.email && user.password === formObject.password) found = true;
                 };
                 console.log(found);
-                if (found === true);
+                if (found === true) return found;
             });
         }
       };
