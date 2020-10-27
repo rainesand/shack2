@@ -1,0 +1,21 @@
+#root {
+    background-color: black;
+}
+
+.card-title {
+    color: black;
+}
+
+
+#summary {
+    color: black;
+}
+
+.cardBtn {
+    background-color: transparent;
+}
+
+.modalRow {
+    display: flex;
+    align-items: center;
+}

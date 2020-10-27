@@ -27,7 +27,7 @@ const Home = () => {
           style={inputStyles}
         />
 
-        <Button variant="brand" className="rainbow-m-around_medium">
+        <Button>
           Login
         </Button>
 

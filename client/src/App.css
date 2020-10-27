@@ -1,0 +1,78 @@
+body {
+    background-color: black !important;
+}
+button {
+    background-color: transparent !important;
+    border: none !important;
+}
+.btn {
+    vertical-align: top !important;
+    border-color: transparent !important;
+    border: none !important;
+}
+.sideScroll, .card-deck {
+    background-color: transparent;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+/* .btn:active, .btn:focus {
+    outline: none !important;
+    border-color: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+} */
+
+.btn {
+    vertical-align: top !important;
+    border-color: transparent !important;
+    border: none !important;
+}
+
+.card-deck::after {
+    content: "";
+    position: absolute !important;
+    display: block !important;
+    left: 90%;
+    z-index: 10;
+    pointer-events: none !important;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(0, 0, 0) 90%);
+    width: 10%;
+    height: 100%;
+}
+button {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+.card-title {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.card-body {
+    white-space: normal !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    text-align: center;
+}
+
+.card {
+    background-color: darkgray !important;
+}
+
+.cardBtn {
+    background-color: transparent !important;
+    border-color: transparent !important;
+}
+.cardBtn:focus {
+    outline: none !important;
+}
+
+.card:hover {
+    border: 3px solid white;
+}
+
+.card-deck {
+    position: relative;
+}
