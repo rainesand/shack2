@@ -4,11 +4,11 @@ import samples from "./sampleShows"
 import './styles.css';
 import { Container, Row, Col, CardDeck } from 'react-bootstrap';
 
-function NewShows() {
+function NewShows(props) {
 
 
     return (
-        <Container id="newDisplay">
+        <Container id="newDisplay" className={props.display}>
             <Row className="justify-content-md-center">
                 <h1 id="displayTitle">Newest Additions In US</h1>
             </Row>

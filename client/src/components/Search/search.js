@@ -11,6 +11,9 @@ function Search() {
         search: ""
     });
 
+    // Set new show display state
+    const [displayState, setDisplayState] = useState("");
+
     // Set results state
     const [resultsState, setResultsState] = useState([]);
 
@@ -21,6 +24,8 @@ function Search() {
     };
 
     const handleFormSubmit = event => {
+        setDisplayState("hide");
+        
         var settingsSearch = {
             "async": true,
             "crossDomain": true,
@@ -43,7 +48,6 @@ function Search() {
             .catch(err => console.log(err));
     };
 
-
     return (
         <Container >
             <Row className="justify-content-center">
@@ -60,8 +64,8 @@ function Search() {
                     <Button type="submit" onClick={handleFormSubmit}>Search</Button>
                 </Col>
             </Row>
-            <NewShows />
-            <Results shows={resultsState}/>
+            <NewShows display={displayState} />
+            <Results shows={resultsState} />
         </Container>
     )
 
