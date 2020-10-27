@@ -28,6 +28,7 @@ function Add() {
                     <Route exact path="/register" component={Register} />
                 </Switch>
                 <NewShows />
+                <Results />
             </Router>
         </div>
     );

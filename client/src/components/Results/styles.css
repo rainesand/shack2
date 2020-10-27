@@ -1,0 +1,17 @@
+/* making columns for results to be reponsive */
+
+#results {
+    width: 1000px;
+    margin: 20px auto;
+    columns: 3;
+    column-gap: 40px;
+}
+
+/* styling the card for responsive design */
+
+#results .card {
+    width: 100%;
+    margin: 0 0 20px;
+    padding: 10px;
+    break-inside: avoid;
+}
