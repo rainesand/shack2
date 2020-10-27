@@ -11,6 +11,8 @@ import samples from "../../NewShows/sampleShows";
 import './style.css';
 import NewShows from "../../NewShows/newShows"
 import Results from "../../Results/results";
+import Search from "../../Search/search";
+import { Container, Row, Col } from 'react-bootstrap';
 
 function Add() {
 
@@ -27,6 +29,14 @@ function Add() {
                     <Route exact path="/" component={Home} />
                     <Route exact path="/register" component={Register} />
                 </Switch>
+                <Container className="center">
+                    <Row className="justify-content-md-center">
+                        <Col md={12} id="welcome">
+                            <h1 id="welcomeName">Add to your Collection</h1>
+                        </Col>
+                    </Row>
+                </Container>
+                <Search />
                 <NewShows />
                 <Results />
             </Router>
