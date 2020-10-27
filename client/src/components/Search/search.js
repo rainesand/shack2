@@ -2,12 +2,17 @@ import React, { useEffect, useState } from "react";
 import './styles.css';
 import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 import API from "../../utils/API";
+import NewShows from "../NewShows/newShows"
+import Results from "../Results/results";
 
 function Search() {
     // Set search field state
     const [searchState, setSearchState] = useState({
         search: ""
     });
+
+    // Set results state
+    const [resultsState, setResultsState] = useState([]);
 
     //Update search state
     function handleInputChange(event) {
@@ -30,17 +35,14 @@ function Search() {
         // When the form is submitted, prevent its default behavior
         event.preventDefault();
         API.searchNetflix(settingsSearch)
-          .then(res => {
-            console.log(res)  
-          }
+            .then(res => {
+                console.log(res)
+                setResultsState(res.ITEMS);
+            }
+            )
+            .catch(err => console.log(err));
+    };
 
-           )
-          .catch(err => console.log(err));
-      };
-
-    
-
-    
 
     return (
         <Container >
@@ -48,16 +50,18 @@ function Search() {
                 <Col md={6}>
                     <Form.Group id="showSearch">
                         <Form.Label>Search for a show or movie to add</Form.Label>
-                        <Form.Control 
-                        id="searchBar"
-                        placeholder="Enter Search"
-                        onChange={handleInputChange}
-                        name="search"
-                        value={searchState.search} />
+                        <Form.Control
+                            id="searchBar"
+                            placeholder="Enter Search"
+                            onChange={handleInputChange}
+                            name="search"
+                            value={searchState.search} />
                     </Form.Group>
                     <Button type="submit" onClick={handleFormSubmit}>Search</Button>
                 </Col>
             </Row>
+            <NewShows />
+            <Results shows={resultsState}/>
         </Container>
     )
 

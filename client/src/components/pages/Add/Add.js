@@ -37,8 +37,6 @@ function Add() {
                     </Row>
                 </Container>
                 <Search />
-                <NewShows />
-                <Results />
             </Router>
         </div>
     );
