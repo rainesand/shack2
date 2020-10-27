@@ -6,9 +6,16 @@
     color: black;
 }
 
+
 #summary {
     color: black;
 }
-button {
-    color: red;
+
+.cardBtn {
+    background-color: transparent;
+}
+
+.modalRow {
+    display: flex;
+    align-items: center;
 }

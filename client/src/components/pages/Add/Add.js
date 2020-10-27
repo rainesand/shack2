@@ -7,8 +7,10 @@ import ShowCard from "../../showCard/showCard"
 import { Link, useLocation } from "react-router-dom";
 import { Form, Button } from 'react-bootstrap';
 import API from "../../../utils/API";
-import samples from "./sampleShows";
+import samples from "../../NewShows/sampleShows";
 import './style.css';
+import NewShows from "../../NewShows/newShows"
+import Results from "../../Results/results";
 
 function Add() {
 
@@ -25,9 +27,7 @@ function Add() {
                     <Route exact path="/" component={Home} />
                     <Route exact path="/register" component={Register} />
                 </Switch>
-                {samples.map(show => {
-                    return <ShowCard sample={show} key={show.netflixid} />;
-                })}
+                <NewShows />
             </Router>
         </div>
     );
