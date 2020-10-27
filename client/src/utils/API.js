@@ -1,7 +1,7 @@
 import axios from "axios";
 import $ from "jquery";
 
-var settings = {
+var settingsNew = {
   "async": true,
   "crossDomain": true,
   "url": "https://unogs-unogs-v1.p.rapidapi.com/aaapi.cgi?q=get%3Anew7%3AUS&p=1&t=ns&st=adv",
@@ -12,10 +12,19 @@ var settings = {
   }
 }
 
+
+
 export default {
+  // Get recent netflix shows
   newNetflix: function () {
-    return $.ajax(settings).done(function (response) {
+    return $.ajax(settingsNew).done(function (response) {
       console.log(JSON.stringify(response));
+    });
+  },
+  // Search netflix shows
+  searchNetflix: function (settings) {
+    return $.ajax(settings).done(function (response) {
+      console.log(response);
     });
   },
   // Gets all users

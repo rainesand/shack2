@@ -1,5 +1,6 @@
 #root {
     background-color: black;
+    font-family: 'Roboto', sans-serif;
 }
 
 .card-title {
@@ -18,4 +19,22 @@
 .modalRow {
     display: flex;
     align-items: center;
+}
+.card-body {
+    padding-top: 0px;
+}
+
+#welcomeName {
+    font-size: 4rem !important;
+    font-family: 'Roboto', sans-serif;
+}
+#welcome {
+    color: white;
+    margin-bottom: 2em;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

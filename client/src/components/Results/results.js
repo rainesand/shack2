@@ -9,7 +9,7 @@ function Results(props) {
 
     return (
         <Container>
-            <div>
+            <div id="results">
                 {samples.map(show => {
                     return <ShowCard sample={show} key={show.netflixid} />;
                 })}
